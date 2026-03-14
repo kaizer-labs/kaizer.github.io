@@ -32,7 +32,7 @@ const { Content } = await render(project);
       <span>{project.data.status}</span>
     </div>
 
-    <header class="project-detail__hero" transition:name={`project-${project.id}`}>
+    <header class="project-detail__hero">
       <p class="section-kicker">{project.data.subtitle}</p>
       <h1>{project.data.title}</h1>
       <p>{project.data.summary}</p>

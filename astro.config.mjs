@@ -1,5 +1,8 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://kaizer-labs.github.io/"
+  site: "https://kaizer-labs.github.io/",
+  devToolbar: {
+    enabled: false
+  }
 });

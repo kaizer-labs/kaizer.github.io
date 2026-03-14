@@ -11,9 +11,9 @@ const links = [
 const pathname = Astro.url.pathname;
 ---
 
-<header class="site-header" transition:persist>
+<header class="site-header">
   <div class="container header-row">
-    <a class="brand" href="/" transition:name="brand">
+    <a class="brand" href="/">
       <span class="brand__name">{site.name}</span>
       <span class="brand__role">{site.role}</span>
     </a>

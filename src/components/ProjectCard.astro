@@ -16,7 +16,7 @@ interface Props {
 const { project } = Astro.props;
 ---
 
-<a class="project-card" href={`/projects/${project.id}/`} transition:name={`project-${project.id}`}>
+<a class="project-card" href={`/projects/${project.id}/`}>
   <div class="project-card__top">
     <span class="project-card__status">{project.data.status}</span>
     <h3>{project.data.title}</h3>
