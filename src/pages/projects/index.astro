@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
-import SectionBlock from "../../components/SectionBlock.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
 
 const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
@@ -14,27 +13,39 @@ const secondary = projects.filter((project) => !project.data.featured);
   description="Case studies for Kaizer Charania covering staff-level backend, platform, and distributed-systems work."
   frameClass="site-frame--home"
 >
-  <SectionBlock
-    eyebrow="Projects"
-    title="Case studies built around scale, judgment, and measurable outcomes."
-    description="These projects are the clearest examples of backend and platform work where architecture, performance, delivery, and business impact all show up together."
-    className="section-block--wide-title"
-  >
-    <div class="project-grid">
+  <section class="project-hub">
+    <div class="project-hub__intro">
+      <p class="section-kicker">Engineering case studies</p>
+      <h1>Technical write-ups focused on system design, tradeoffs, and measurable production impact.</h1>
+      <p>
+        These are technical case studies on backend, platform, and optimization systems, written to show the architecture,
+        tradeoffs, and production outcomes behind the work.
+      </p>
+    </div>
+  </section>
+
+  <section class="project-collection">
+    <div class="project-collection__header">
+      <p class="section-kicker">Featured studies</p>
+      <h2>Flagship technical stories</h2>
+    </div>
+
+    <div class="project-grid project-grid--editorial">
       {featured.map((project) => <ProjectCard project={project} />)}
     </div>
-  </SectionBlock>
+  </section>
 
-  <SectionBlock
-    eyebrow="Additional work"
-    title="Supporting work that extends the core story."
-    description="These projects broaden the portfolio without competing with the flagship backend and platform case studies."
-    className="section-block--wide-title"
-  >
+  <section class="project-collection">
+    <div class="project-collection__header">
+      <p class="section-kicker">Additional work</p>
+      <h2>Adjacent technical exploration</h2>
+      <p>Supporting work that broadens the portfolio into adjacent platform and AI-enabled system design patterns.</p>
+    </div>
+
     <div class="project-grid project-grid--secondary">
       {secondary.map((project) => <ProjectCard project={project} />)}
     </div>
-  </SectionBlock>
+  </section>
 
   <section class="final-cta">
     <p class="section-kicker">Connect</p>

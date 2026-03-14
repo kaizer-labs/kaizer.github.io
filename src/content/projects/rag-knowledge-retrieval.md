@@ -2,6 +2,9 @@
 title: "RAG knowledge retrieval"
 subtitle: "Practical AI retrieval for internal engineering and operational knowledge"
 summary: "Architected retrieval-backed internal tooling for engineering and operational knowledge access, grounding AI work in trust, usefulness, and maintainability rather than novelty."
+problem: "Internal knowledge was fragmented across tools and documents, which made it hard for engineers and operators to retrieve reliable context quickly enough to support day-to-day decisions."
+role: "Platform-minded engineer shaping practical AI retrieval workflows"
+scope: "Knowledge ingestion, retrieval quality, system integration, and operational trust controls"
 year: "Emerging focus"
 status: "Exploration"
 featured: false
@@ -28,6 +31,31 @@ metrics:
 audience:
   - "AI / Platform roles"
   - "Staff Engineer"
+architectureTitle: "Retrieval-backed knowledge pipeline"
+architectureSummary: "The system separated source ingestion, retrieval, and answer composition so the AI layer stayed grounded in trustworthy internal context rather than unsupported generation."
+architectureLayers:
+  - name: "Knowledge ingestion layer"
+    description: "Relevant engineering and operational sources were normalized into a maintainable indexing workflow."
+    bullets:
+      - "Source selection focused on operationally important documents"
+      - "Indexing favored maintainability over one-off experimentation"
+  - name: "Retrieval and ranking"
+    description: "Queries resolved through retrieval first, ensuring responses were anchored in internal material."
+    bullets:
+      - "Retrieval quality treated as the product, not an implementation detail"
+      - "Grounding signal prioritized over free-form generation"
+  - name: "Workflow-facing response layer"
+    description: "Generated outputs were designed for practical internal workflows and traceable system behavior."
+    bullets:
+      - "Integration shaped around decision support and usefulness"
+      - "Operational trust and debuggability remained first-class concerns"
+decisions:
+  - title: "Build retrieval-first instead of chatbot-first"
+    detail: "The system was designed around getting the right information into the response path, because reliability mattered more than conversational polish."
+  - title: "Keep the system operable by normal engineering teams"
+    detail: "Observability, maintainability, and explicit data sources mattered as much as model output quality. The design avoided patterns that would be difficult for a platform team to own over time."
+  - title: "Anchor value in concrete workflows"
+    detail: "The project emphasized internal knowledge access that could shorten lookup time and improve decision quality, not generic AI novelty disconnected from the team’s actual work."
 ---
 ## What I built
 

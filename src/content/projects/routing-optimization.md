@@ -2,6 +2,9 @@
 title: "Routing optimization engine"
 subtitle: "Modeling real field constraints across 800+ locations"
 summary: "Designed routing optimization for mobile technicians across multi-location field operations, using travel time, service duration, and time windows instead of simplistic distance logic."
+problem: "Naive routing logic could not reflect the real field constraints that determined on-time service, technician utilization, and downstream schedule stability."
+role: "Staff-level systems designer for routing and operational optimization workflows"
+scope: "Constraint modeling, travel-time-aware planning, schedule interaction handling, and operational outcome measurement"
 year: "Recent work"
 status: "Featured"
 featured: true
@@ -29,6 +32,31 @@ audience:
   - "Staff Engineer"
   - "Forward Deployed roles"
   - "Lead Engineer"
+architectureTitle: "Routing and schedule-feedback architecture"
+architectureSummary: "The routing system was shaped as an operational feedback loop: gather realistic field constraints, generate route candidates, and evaluate them against service outcomes rather than pure geometric efficiency."
+architectureLayers:
+  - name: "Operational inputs"
+    description: "Routing requests combined geography with service duration, appointment windows, and technician context."
+    bullets:
+      - "Travel time modeled alongside job constraints"
+      - "Inputs designed around the realities of field service execution"
+  - name: "Optimization engine"
+    description: "Candidate routes were evaluated against business-relevant constraints instead of shortest-distance heuristics."
+    bullets:
+      - "Time-window feasibility mattered as much as path length"
+      - "Routing quality linked directly to schedule viability"
+  - name: "Outcome feedback loop"
+    description: "The system measured on-time completion and reschedule rates so optimization quality reflected operational truth."
+    bullets:
+      - "Performance tied to appointment outcomes"
+      - "Routing was treated as one layer of the larger scheduling system"
+decisions:
+  - title: "Model reality instead of optimizing a toy version of the problem"
+    detail: "Distance-only routing would have been faster to implement, but it would not have improved field performance. The design encoded the constraints that actually determined service success."
+  - title: "Optimize for outcomes, not just route elegance"
+    detail: "The goal was not a mathematically tidy route plan. It was fewer misses, stronger on-time performance, and schedules that held up under real operating conditions."
+  - title: "Keep routing coupled to scheduling truth"
+    detail: "Route generation could not be treated as a standalone algorithmic island. It had to account for the same windows, durations, and downstream effects that shaped the scheduling experience."
 ---
 ## What I built
 

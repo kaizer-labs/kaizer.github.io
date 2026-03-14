@@ -1,0 +1,35 @@
+<svg width="1200" height="620" viewBox="0 0 1200 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="620" rx="36" fill="#F7F3EA"/>
+  <rect x="42" y="42" width="1116" height="536" rx="28" fill="#FFFDF8" stroke="#D9D2C5"/>
+  <text x="84" y="108" fill="#0F766E" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4">COLLABORATION LOOP</text>
+  <text x="84" y="156" fill="#1F2937" font-family="Arial, sans-serif" font-size="44" font-weight="700">What the actual working rhythm looked like</text>
+
+  <rect x="84" y="220" width="240" height="210" rx="22" fill="#F9FBFB" stroke="#C9D6D4"/>
+  <text x="114" y="266" fill="#0F766E" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">YOU</text>
+  <text x="114" y="318" fill="#1F2937" font-family="Arial, sans-serif" font-size="24" font-weight="700">Call out what feels off</text>
+  <text x="114" y="362" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">"Phone size is broken"</text>
+  <text x="114" y="394" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">"This box is not needed"</text>
+  <text x="114" y="426" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">"Make it look proper"</text>
+
+  <rect x="480" y="220" width="240" height="210" rx="22" fill="#F9FBFB" stroke="#C9D6D4"/>
+  <text x="510" y="266" fill="#0F766E" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">ME</text>
+  <text x="510" y="318" fill="#1F2937" font-family="Arial, sans-serif" font-size="24" font-weight="700">Inspect, patch, rebuild</text>
+  <text x="510" y="362" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">Read files</text>
+  <text x="510" y="394" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">Edit styles/templates</text>
+  <text x="510" y="426" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">Run Astro build</text>
+
+  <rect x="876" y="220" width="240" height="210" rx="22" fill="#F9FBFB" stroke="#C9D6D4"/>
+  <text x="906" y="266" fill="#0F766E" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">TOGETHER</text>
+  <text x="906" y="318" fill="#1F2937" font-family="Arial, sans-serif" font-size="24" font-weight="700">Keep the good parts, trim the fluff</text>
+  <text x="906" y="362" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">Header cleaned up</text>
+  <text x="906" y="394" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">Projects reworked</text>
+  <text x="906" y="426" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">Blog added</text>
+
+  <path d="M324 326H456" stroke="#0F766E" stroke-width="4" stroke-linecap="round"/>
+  <path d="M720 326H852" stroke="#0F766E" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="456" cy="326" r="7" fill="#0F766E"/>
+  <circle cx="852" cy="326" r="7" fill="#0F766E"/>
+
+  <path d="M996 470C996 520 828 548 600 548C372 548 204 520 204 470" stroke="#D97706" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 10"/>
+  <text x="430" y="590" fill="#6B7280" font-family="Arial, sans-serif" font-size="22">Feedback loop, not one-shot generation</text>
+</svg>

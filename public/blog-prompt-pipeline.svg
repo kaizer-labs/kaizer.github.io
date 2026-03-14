@@ -1,0 +1,30 @@
+<svg width="1400" height="760" viewBox="0 0 1400 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="760" rx="36" fill="#F7F3EA"/>
+  <rect x="56" y="56" width="1288" height="648" rx="30" fill="#FFFDF8" stroke="#D9D2C5"/>
+  <text x="108" y="128" fill="#0F766E" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4">PROMPT TO PRODUCT</text>
+  <text x="108" y="180" fill="#1F2937" font-family="Arial, sans-serif" font-size="52" font-weight="700">How the site actually came together</text>
+
+  <rect x="108" y="240" width="320" height="360" rx="24" fill="#F9FBFB" stroke="#C9D6D4"/>
+  <text x="138" y="286" fill="#0F766E" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">1. BUILD BRIEF</text>
+  <text x="138" y="336" fill="#1F2937" font-family="Arial, sans-serif" font-size="24" font-weight="700">Give the model a sharp sandbox</text>
+  <text x="138" y="388" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">"Use Astro"</text>
+  <text x="138" y="422" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">"Keep JS minimal"</text>
+  <text x="138" y="456" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">"Build content-driven pages"</text>
+  <text x="138" y="490" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">"Ensure responsive behavior"</text>
+
+  <rect x="540" y="240" width="320" height="360" rx="24" fill="#F9FBFB" stroke="#C9D6D4"/>
+  <text x="570" y="286" fill="#0F766E" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">2. ITERATE</text>
+  <text x="570" y="336" fill="#1F2937" font-family="Arial, sans-serif" font-size="24" font-weight="700">Treat it like real product work</text>
+  <text x="570" y="388" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">Layout first</text>
+  <text x="570" y="422" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">Then phone fixes</text>
+  <text x="570" y="456" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">Then projects and blog</text>
+  <text x="570" y="490" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">Then copy cleanup</text>
+
+  <rect x="972" y="240" width="320" height="360" rx="24" fill="#F9FBFB" stroke="#C9D6D4"/>
+  <text x="1002" y="286" fill="#0F766E" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">3. SHIP</text>
+  <text x="1002" y="336" fill="#1F2937" font-family="Arial, sans-serif" font-size="24" font-weight="700">Astro outputs static files</text>
+  <text x="1002" y="388" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">npm run build</text>
+  <text x="1002" y="422" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">Push to GitHub</text>
+  <text x="1002" y="456" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">GitHub Pages serves dist/</text>
+  <text x="1002" y="490" fill="#4B5563" font-family="Arial, sans-serif" font-size="20">Ship it, even without Astro fluency</text>
+</svg>
