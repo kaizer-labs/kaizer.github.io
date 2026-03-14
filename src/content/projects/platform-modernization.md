@@ -1,7 +1,7 @@
 ---
 title: "AndGo platform scaling and modernization"
 subtitle: "From legacy delivery constraints to platform-grade execution"
-summary: "Led backend and platform evolution across fleet, scheduling, pricing, and engineering systems while pairing architecture direction with roadmap ownership and team operating cadence."
+summary: "Led backend and platform modernization across fleet, scheduling, pricing, and engineering systems, pairing architecture direction with measurable improvements in delivery and business outcomes."
 year: "Current chapter"
 status: "Featured"
 featured: true
@@ -35,13 +35,13 @@ audience:
 ---
 ## What I built
 
-I led backend and platform evolution across Goodyear systems that supported fleet workflows, scheduling, pricing, and engineering operations. The work covered both architecture and execution: modernization of the system itself, plus the standards, reviews, and planning rhythm needed to make that modernization stick.
+I led backend and platform modernization across Goodyear systems that supported fleet workflows, scheduling, pricing, and engineering operations. The work covered both architecture and execution: modernization of the software itself, plus the review standards, delivery mechanisms, and team cadence needed to make that modernization stick.
 
-This is the broadest project in the portfolio because the scope was not limited to a single service. It included platform direction, GraphQL and Hasura enablement, architecture review rigor, and the execution systems around the team.
+This is the broadest project in the portfolio because the scope was not limited to a single service. It included platform direction, GraphQL and Hasura enablement, architecture review rigor, and operating mechanisms that affected an 8-engineer team rather than a single code path.
 
 ## How I approached it
 
-The core problem was not just legacy code. It was the combination of legacy architecture, slower delivery cycles, and too much rework. So the approach had to combine technical change with team-level operating improvements.
+The core problem was not just legacy code. It was the combination of legacy architecture, slower delivery cycles, and too much rework. The solution therefore had to combine system changes with staff-style leverage: better boundaries, stronger technical standards, and clearer engineering execution.
 
 The work focused on a few leverage points:
 
@@ -60,10 +60,10 @@ So the decisions here were deliberately pragmatic:
 - build enablement assets, templates, and review systems so adoption did not depend on repeated manual coaching
 - modernize in ways that improved business outcomes and engineering predictability at the same time
 
-This is also where the role operated beyond a normal feature-owner scope. The work required technical direction, cross-functional coordination, and team operating structure together.
+This is also where the role operated beyond a normal feature-owner scope. The work required technical direction, cross-functional coordination, and team operating structure together, which is why it is one of the strongest staff-level examples in the portfolio.
 
 ## Results and impact
 
-This effort supported platform growth from $3M to $15M MRR, improved delivery speed by roughly 20%, and reduced rework from 15% to 4.97%. It also created a stronger platform and execution foundation for future work.
+This effort supported platform growth from $3M to $15M MRR, improved delivery speed by roughly 20%, and reduced rework from 15% to 4.97%. Just as importantly, it created a stronger architectural and operating foundation for future teams to build on without repeating the same delivery drag.
 
-This project matters because it shows the pattern that best represents the portfolio overall: architecture work tied directly to team leverage and measurable business outcomes.
+This project matters because it shows the pattern that best represents the portfolio overall: architecture work tied directly to team leverage, execution quality, and measurable business outcomes.

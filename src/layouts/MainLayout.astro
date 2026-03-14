@@ -9,9 +9,10 @@ import { site as siteData } from "../data/site";
 interface Props {
   title: string;
   description: string;
+  frameClass?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, frameClass } = Astro.props;
 ---
 
 <!doctype html>
@@ -31,9 +32,19 @@ const { title, description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="manifest" href="/site.webmanifest" />
     <title>{title}</title>
+    <script is:inline>
+      (() => {
+        const storedTheme = localStorage.getItem("theme-preference");
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        const theme = storedTheme || systemTheme;
+        document.documentElement.dataset.theme = theme;
+        const themeColor = theme === "dark" ? "#08111f" : "#f6f3ec";
+        document.querySelector('meta[name="theme-color"]')?.setAttribute("content", themeColor);
+      })();
+    </script>
   </head>
   <body>
-    <div class="site-frame">
+    <div class:list={["site-frame", frameClass]}>
       <div class="site-glow site-glow--left"></div>
       <div class="site-glow site-glow--right"></div>
       <div class="site-grid"></div>

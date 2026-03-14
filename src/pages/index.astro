@@ -3,27 +3,31 @@ import { getCollection } from "astro:content";
 import MainLayout from "../layouts/MainLayout.astro";
 import SectionBlock from "../components/SectionBlock.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import MusicPanel from "../components/MusicPanel.astro";
-import { currentQueue, site } from "../data/site";
+import ProfessionalTimeline from "../components/ProfessionalTimeline.astro";
+import { leadershipSignals, proofPoints, site, workTimeline } from "../data/site";
 
 const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
 const featured = projects.filter((project) => project.data.featured).slice(0, 3);
 ---
 
 <MainLayout
-  title="Kaizer Charania | Backend & Platform Engineering Leader"
-  description="Editorial portfolio for Kaizer Charania, focused on backend systems, platform architecture, leadership, and practical AI retrieval."
+  title="Kaizer Charania | Staff Engineer and Engineering Manager Profile"
+  description="Portfolio for Kaizer Charania, a technical leader spanning staff engineer and engineering manager scope across backend, platform, and distributed systems."
+  frameClass="site-frame--home"
 >
   <section class="hero">
     <div class="hero__surface">
       <div class="hero__content">
         <div class="hero__content-inner">
-          <p class="section-kicker">Backend • Platform • Leadership</p>
+          <p class="section-kicker">Staff Engineer • Engineering Manager • Backend • Platform</p>
           <h1 class="hero__headline-plain">{site.heroHeadline}</h1>
           <p class="hero__lede">{site.heroIntro}</p>
+          <div class="tag-row">
+            {proofPoints.slice(0, 3).map((item) => <span class="tech-tag">{item.value}</span>)}
+          </div>
           <div class="hero__actions">
-            <a class="button" href="/projects/">See projects</a>
-            <a class="button button--ghost" href="/about/">About the work</a>
+            <a class="button" href="/projects/">See case studies</a>
+            <a class="button button--ghost" href={site.resume} target="_blank" rel="noreferrer">View resume</a>
           </div>
         </div>
       </div>
@@ -41,12 +45,12 @@ const featured = projects.filter((project) => project.data.featured).slice(0, 3)
           <span class="hero__star hero__star--6"></span>
         </div>
         <div class="hero__signal-card">
-          <p class="section-kicker">{site.currentFocusTitle}</p>
-          <p class="hero__signal-copy">{site.currentFocusBody}</p>
+          <p class="section-kicker">At a glance</p>
+          <p class="hero__signal-copy">{site.contactBody}</p>
           <div class="hero__stack">
             <span class="tech-tag">7+ years</span>
             <span class="tech-tag">8-engineer team scope</span>
-            <span class="tech-tag">$3M → $15M MRR</span>
+            <span class="tech-tag">Architecture + execution</span>
           </div>
         </div>
         <div class="hero__signal-path">
@@ -59,40 +63,54 @@ const featured = projects.filter((project) => project.data.featured).slice(0, 3)
   </section>
 
   <SectionBlock
-    eyebrow="On the radar"
-    title="Forward-looking work that still stays grounded."
-    description={site.radarBody}
+    eyebrow="Professional work"
+    title="The main chapters of my professional work so far."
+    description="Most of my career has been shaped by backend, platform, and systems work that sits close to operations, data, and the engineering process itself."
+    className="section-block--wide-title"
   >
-    <div class="radar-card">
-      <p>{site.recruiterIntro}</p>
-    </div>
-  </SectionBlock>
-
-  <SectionBlock
-    eyebrow="Current queue"
-    title="A playlist-inspired module for what is actively in motion."
-    description="The brief asked for a listening-style block. This version stays honest to your source material and frames active work themes in that visual language."
-  >
-    <MusicPanel items={currentQueue} />
+    <ProfessionalTimeline items={workTimeline} />
   </SectionBlock>
 
   <SectionBlock
     eyebrow="Featured work"
-    title="Selected case studies with measurable outcomes."
-    description="Project cards mirror the reference structure while staying grounded in your actual backend, platform, and AI retrieval work."
+    title="Case studies where technical depth and leadership show up together."
+    description="These projects are the clearest examples of architecture, performance, delivery discipline, and business impact reinforcing each other."
+    className="section-block--wide-title"
   >
     <div class="project-grid">
       {featured.map((project) => <ProjectCard project={project} />)}
     </div>
   </SectionBlock>
 
+  <SectionBlock
+    eyebrow="Leadership"
+    title="How I tend to lead when the work gets complex."
+    description={site.radarBody}
+    className="section-block--wide-title"
+  >
+    <div class="leadership-spotlight">
+      <article class="leadership-spotlight__intro">
+        <p class="section-kicker">Leadership snapshot</p>
+        <p>{site.recruiterIntro}</p>
+      </article>
+      <div class="leadership-spotlight__grid">
+        {leadershipSignals.map((item, index) => (
+          <article class:list={["leadership-spotlight__card", index === 0 && "is-featured"]}>
+            <p class="leadership-spotlight__index">0{index + 1}</p>
+          <p>{item}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </SectionBlock>
+
   <section class="final-cta">
-    <p class="section-kicker">Let’s talk</p>
+    <p class="section-kicker">Connect</p>
     <h2>{site.contactHeadline}</h2>
     <p>{site.contactBody}</p>
     <div class="hero__actions">
-      <a class="button" href="/contact/">Open contact</a>
-      <a class="button button--ghost" href="/references/">See references</a>
+      <a class="button" href="/contact/">Connect</a>
+      <a class="button button--ghost" href="/about/">About me</a>
     </div>
   </section>
 </MainLayout>
