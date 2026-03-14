@@ -1,0 +1,67 @@
+---
+import { getCollection, render } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import TechTag from "../../components/TechTag.astro";
+
+export async function getStaticPaths() {
+  const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+
+  return projects.map((project, index) => ({
+    params: { slug: project.id },
+    props: {
+      project,
+      previous: projects[index - 1] ?? null,
+      next: projects[index + 1] ?? null
+    }
+  }));
+}
+
+const { project, previous, next } = Astro.props;
+const { Content } = await render(project);
+---
+
+<MainLayout
+  title={`${project.data.title} | Kaizer Charania`}
+  description={project.data.summary}
+>
+  <article class="project-detail">
+    <a class="back-link" href="/projects/">← Back to projects</a>
+
+    <div class="project-detail__meta">
+      <span>{project.data.year}</span>
+      <span>{project.data.status}</span>
+    </div>
+
+    <header class="project-detail__hero" transition:name={`project-${project.id}`}>
+      <p class="section-kicker">{project.data.subtitle}</p>
+      <h1>{project.data.title}</h1>
+      <p>{project.data.summary}</p>
+      <div class="tag-row">
+        {project.data.tech.map((tag) => <TechTag label={tag} />)}
+      </div>
+    </header>
+
+    <section class="detail-panel">
+      <h2>{project.data.toolsTitle}</h2>
+      <div class="detail-grid">
+        {project.data.tools.map((item) => <div class="detail-chip">{item}</div>)}
+      </div>
+    </section>
+
+    <section class="detail-panel">
+      <h2>What makes it special</h2>
+      <ul class="detail-list">
+        {project.data.special.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+
+    <section class="detail-panel prose-block">
+      <Content />
+    </section>
+
+    <nav class="project-pagination" aria-label="Project navigation">
+      {previous ? <a href={`/projects/${previous.id}/`}>← {previous.data.title}</a> : <span></span>}
+      {next ? <a href={`/projects/${next.id}/`}>{next.data.title} →</a> : <span></span>}
+    </nav>
+  </article>
+</MainLayout>

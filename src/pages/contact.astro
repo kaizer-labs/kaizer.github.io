@@ -1,0 +1,36 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionBlock from "../components/SectionBlock.astro";
+import { site } from "../data/site";
+---
+
+<MainLayout
+  title="Contact | Kaizer Charania"
+  description="Contact page for Kaizer Charania focused on backend, platform, and AI-enablement conversations."
+>
+  <SectionBlock
+    eyebrow="Contact"
+    title={site.contactHeadline}
+    description={site.contactBody}
+  >
+    <div class="contact-grid">
+      <article class="reference-card">
+        <h3>Best-fit roles</h3>
+        <p>{site.contactGuidance}</p>
+      </article>
+      <article class="reference-card">
+        <h3>Location</h3>
+        <p>{site.location}</p>
+      </article>
+      <article class="reference-card">
+        <h3>Profile links</h3>
+        <div class="contact-links">
+          <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href={site.github} target="_blank" rel="noreferrer">GitHub</a>
+          <a href={site.resume} target="_blank" rel="noreferrer">Resume</a>
+          <a href={site.website} target="_blank" rel="noreferrer">Website</a>
+        </div>
+      </article>
+    </div>
+  </SectionBlock>
+</MainLayout>

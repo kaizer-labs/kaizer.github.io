@@ -1,0 +1,28 @@
+@use "./tokens" as *;
+
+.project-card,
+.reference-card,
+.value-card,
+.timeline__item,
+.detail-chip,
+.music-panel__row,
+.button,
+.button--ghost,
+.nav-link,
+.nav-cta,
+.lang-switch {
+  transition:
+    transform $duration-base $ease-standard,
+    border-color $duration-base $ease-standard,
+    background-color $duration-base $ease-standard,
+    color $duration-base $ease-standard,
+    opacity $duration-base $ease-standard;
+}
+
+.project-card:hover,
+.reference-card:hover,
+.value-card:hover,
+.timeline__item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(15, 118, 110, 0.22);
+}

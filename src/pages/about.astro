@@ -1,0 +1,75 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionBlock from "../components/SectionBlock.astro";
+import Timeline from "../components/Timeline.astro";
+import ValuesGrid from "../components/ValuesGrid.astro";
+import { site, skills, story, timeline, values } from "../data/site";
+---
+
+<MainLayout
+  title="About | Kaizer Charania"
+  description="About page for Kaizer Charania covering philosophy, timeline, skillset, values, and current focus."
+>
+  <SectionBlock
+    eyebrow="About"
+    title="Technical ownership, platform thinking, and management-grade execution."
+    description={site.currentFocusBody}
+  >
+    <div class="content-stack">
+      {story.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  </SectionBlock>
+
+  <SectionBlock
+    eyebrow="Timeline"
+    title="Career evolution and toolchain growth."
+    description="A readable chronology of how the work evolved from backend depth into broader platform and leadership scope."
+  >
+    <Timeline items={timeline} />
+  </SectionBlock>
+
+  <SectionBlock
+    eyebrow="Skillset"
+    title="Grouped by the way the work actually shows up."
+    description="Frontend is present, but the core profile is clearly backend, platform, and methodology heavy."
+  >
+    <div class="skill-groups">
+      <article class="skill-group">
+        <h3>Frontend</h3>
+        <div class="tag-row">
+          {skills.frontend.map((item) => <span class="tech-tag">{item}</span>)}
+        </div>
+      </article>
+      <article class="skill-group">
+        <h3>Backend</h3>
+        <div class="tag-row">
+          {skills.backend.map((item) => <span class="tech-tag">{item}</span>)}
+        </div>
+      </article>
+      <article class="skill-group">
+        <h3>Methodology &amp; tooling</h3>
+        <div class="tag-row">
+          {skills.methodology.map((item) => <span class="tech-tag">{item}</span>)}
+        </div>
+      </article>
+    </div>
+  </SectionBlock>
+
+  <SectionBlock
+    eyebrow="Values"
+    title="Principles that shape the work."
+    description="These cards are drawn from the strongest themes repeated across the extracted material."
+  >
+    <ValuesGrid items={values} />
+  </SectionBlock>
+
+  <section class="final-cta">
+    <p class="section-kicker">Current focus</p>
+    <h2>{site.currentFocusTitle}</h2>
+    <p>{site.currentFocusBody}</p>
+    <div class="hero__actions">
+      <a class="button" href="/projects/">Explore projects</a>
+      <a class="button button--ghost" href="/contact/">Start a conversation</a>
+    </div>
+  </section>
+</MainLayout>

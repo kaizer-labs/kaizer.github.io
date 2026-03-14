@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import SectionBlock from "../../components/SectionBlock.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+const featured = projects.filter((project) => project.data.featured);
+const secondary = projects.filter((project) => !project.data.featured);
+---
+
+<MainLayout
+  title="Projects | Kaizer Charania"
+  description="Projects page for Kaizer Charania covering featured platform, backend, and AI retrieval work."
+>
+  <SectionBlock
+    eyebrow="Projects"
+    title="Case studies built around backend leverage and measurable outcomes."
+    description="This page follows the brief’s structure: featured project cards first, then secondary explorations, and a collaboration CTA."
+  >
+    <div class="project-grid">
+      {featured.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </SectionBlock>
+
+  <SectionBlock
+    eyebrow="Additional explorations"
+    title="Secondary projects that deepen the portfolio story."
+    description="These support the main narrative without overwhelming the page."
+  >
+    <div class="project-grid project-grid--secondary">
+      {secondary.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </SectionBlock>
+
+  <section class="final-cta">
+    <p class="section-kicker">Collaboration</p>
+    <h2>Interested in platform, backend, or AI-enablement work?</h2>
+    <p>That’s where this portfolio is strongest: systems that matter, teams that need leverage, and products that benefit from disciplined engineering.</p>
+    <div class="hero__actions">
+      <a class="button" href="/contact/">Let's talk</a>
+      <a class="button button--ghost" href="/references/">See references</a>
+    </div>
+  </section>
+</MainLayout>

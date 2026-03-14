@@ -1,0 +1,15 @@
+{
+  "name": "Kaizer Charania Portfolio",
+  "short_name": "Kaizer Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f3ec",
+  "theme_color": "#f6f3ec",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

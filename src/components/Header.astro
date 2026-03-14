@@ -1,0 +1,33 @@
+---
+import { site } from "../data/site";
+
+const links = [
+  { label: "About", href: "/about/" },
+  { label: "Projects", href: "/projects/" },
+  { label: "References", href: "/references/" },
+  { label: "Thinking", href: "/blog/" }
+];
+
+const pathname = Astro.url.pathname;
+---
+
+<header class="site-header" transition:persist>
+  <div class="container header-row">
+    <a class="brand" href="/" transition:name="brand">
+      <span class="brand__name">{site.name}</span>
+      <span class="brand__role">{site.role}</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      {links.map((link) => (
+        <a class:list={["nav-link", pathname.startsWith(link.href) && "is-active"]} href={link.href}>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="header-actions">
+      <a class="nav-cta" href="/contact/">Let's talk</a>
+    </div>
+  </div>
+</header>

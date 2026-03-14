@@ -1,0 +1,38 @@
+$font-sans: "Manrope", system-ui, sans-serif;
+$font-display: "Cormorant Garamond", Georgia, serif;
+
+$color-bg: #f6f3ec;
+$color-surface: rgba(255, 255, 255, 0.7);
+$color-border: rgba(15, 23, 42, 0.12);
+$color-text: #18212b;
+$color-muted: #5c6875;
+$color-accent: #0f766e;
+
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.25rem;
+$space-6: 1.5rem;
+$space-8: 2rem;
+$space-10: 2.5rem;
+$space-12: 3rem;
+$space-16: 4rem;
+
+$radius-md: 1.25rem;
+$radius-lg: 1.75rem;
+
+$shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.22);
+
+$text-xs: 0.78rem;
+$text-sm: 0.94rem;
+$text-base: 1.02rem;
+$text-lg: 1.14rem;
+$text-xl: 1.3rem;
+
+$ease-standard: cubic-bezier(0.2, 0, 0, 1);
+$ease-emphasized: cubic-bezier(0.2, 0.8, 0.2, 1);
+$ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+$duration-fast: 160ms;
+$duration-base: 220ms;
+$duration-slow: 320ms;

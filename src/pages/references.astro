@@ -1,0 +1,24 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionBlock from "../components/SectionBlock.astro";
+import { references } from "../data/site";
+---
+
+<MainLayout
+  title="References | Kaizer Charania"
+  description="Reference signals and independent validation drawn from extracted resume and performance-review material."
+>
+  <SectionBlock
+    eyebrow="References"
+    title="Independent signals behind the portfolio narrative."
+    description="This page does not invent testimonials. It turns the strongest documented evidence into a recruiter- and manager-friendly reference view."
+  >
+    <div class="references-list">
+      {references.map((item) => (
+        <article class="reference-card">
+          <p>{item}</p>
+        </article>
+      ))}
+    </div>
+  </SectionBlock>
+</MainLayout>

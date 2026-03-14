@@ -1,0 +1,80 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionBlock from "../components/SectionBlock.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import MusicPanel from "../components/MusicPanel.astro";
+import { currentQueue, site } from "../data/site";
+
+const projects = (await getCollection("projects")).sort((a, b) => a.data.order - b.data.order);
+const featured = projects.filter((project) => project.data.featured).slice(0, 3);
+---
+
+<MainLayout
+  title="Kaizer Charania | Backend & Platform Engineering Leader"
+  description="Editorial portfolio for Kaizer Charania, focused on backend systems, platform architecture, leadership, and practical AI retrieval."
+>
+  <section class="hero">
+    <div class="hero__copy" transition:name="hero-copy">
+      <p class="section-kicker">Backend • Platform • Leadership</p>
+      <h1 class="hero__headline-plain">{site.heroHeadline}</h1>
+      <p class="hero__lede">{site.heroIntro}</p>
+      <div class="hero__actions">
+        <a class="button" href="/projects/">See projects</a>
+        <a class="button button--ghost" href="/about/">About the work</a>
+      </div>
+    </div>
+
+    <div class="hero__panel">
+      <div class="hero__panel-intro">
+        <p class="section-kicker">{site.currentFocusTitle}</p>
+        <p class="hero__panel-copy">{site.currentFocusBody}</p>
+      </div>
+      <div class="hero__panel-metrics">
+        <div class="hero__stack">
+          <span class="tech-tag">7+ years</span>
+          <span class="tech-tag">8-engineer team scope</span>
+          <span class="tech-tag">$3M → $15M MRR</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionBlock
+    eyebrow="On the radar"
+    title="Forward-looking work that still stays grounded."
+    description={site.radarBody}
+  >
+    <div class="radar-card">
+      <p>{site.recruiterIntro}</p>
+    </div>
+  </SectionBlock>
+
+  <SectionBlock
+    eyebrow="Current queue"
+    title="A playlist-inspired module for what is actively in motion."
+    description="The brief asked for a listening-style block. This version stays honest to your source material and frames active work themes in that visual language."
+  >
+    <MusicPanel items={currentQueue} />
+  </SectionBlock>
+
+  <SectionBlock
+    eyebrow="Featured work"
+    title="Selected case studies with measurable outcomes."
+    description="Project cards mirror the reference structure while staying grounded in your actual backend, platform, and AI retrieval work."
+  >
+    <div class="project-grid">
+      {featured.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </SectionBlock>
+
+  <section class="final-cta">
+    <p class="section-kicker">Let’s talk</p>
+    <h2>{site.contactHeadline}</h2>
+    <p>{site.contactBody}</p>
+    <div class="hero__actions">
+      <a class="button" href="/contact/">Open contact</a>
+      <a class="button button--ghost" href="/references/">See references</a>
+    </div>
+  </section>
+</MainLayout>

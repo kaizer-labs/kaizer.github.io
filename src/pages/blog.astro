@@ -1,0 +1,25 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionBlock from "../components/SectionBlock.astro";
+import { writingThemes } from "../data/site";
+---
+
+<MainLayout
+  title="Thinking | Kaizer Charania"
+  description="Themes and essays Kaizer Charania is well-positioned to publish across backend systems, platform engineering, AI retrieval, and engineering leadership."
+>
+  <SectionBlock
+    eyebrow="Thinking"
+    title="Areas of thought leadership that fit the work already on this site."
+    description="No articles are published here yet, but the portfolio already points to a clear writing direction: backend architecture, platform leverage, AI retrieval, and engineering execution."
+  >
+    <div class="references-list">
+      {writingThemes.map((item) => (
+        <article class="reference-card">
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </article>
+      ))}
+    </div>
+  </SectionBlock>
+</MainLayout>
