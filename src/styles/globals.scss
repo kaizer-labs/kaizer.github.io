@@ -1674,6 +1674,11 @@ body,
   .header-actions {
     grid-column: 1 / -1;
     justify-content: flex-start;
+    width: 100%;
+  }
+  .header-actions .nav-cta {
+    flex: 0 1 auto;
+    max-width: 100%;
   }
   .hero {
     gap: $space-4;
@@ -1722,6 +1727,13 @@ body,
   }
   .hero__signal-card {
     width: 100%;
+  }
+  .hero__signal-card .hero__stack {
+    flex-wrap: wrap;
+  }
+  .hero__signal-card .tech-tag {
+    max-width: 100%;
+    white-space: normal;
   }
   .hero__stack {
     flex-wrap: wrap;
@@ -1798,6 +1810,16 @@ body,
   .contact-showcase {
     grid-template-columns: 1fr;
   }
+  .leadership-spotlight__card,
+  .leadership-spotlight__card.is-featured,
+  .leadership-spotlight__card:not(.is-featured),
+  .leadership-spotlight__card:nth-child(3),
+  .leadership-spotlight__card:nth-child(4),
+  .about-operating__card,
+  .about-operating__card.is-featured,
+  .about-operating__card:not(.is-featured) {
+    grid-column: 1 / -1;
+  }
   .about-strengths__card {
     min-height: 0;
   }
@@ -1850,6 +1872,13 @@ body,
   }
   .hero__signal-card {
     padding: $space-5;
+  }
+  .hero__signal-card .hero__stack {
+    gap: 0.5rem;
+  }
+  .hero__signal-card .tech-tag {
+    font-size: 0.74rem;
+    padding: 0.42rem 0.62rem;
   }
   .section-block h2 {
     font-size: 24px;
